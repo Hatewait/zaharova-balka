@@ -1,0 +1,65 @@
+:root {
+  /* Text-size styles */
+  --heading--xl: 7rem;
+  --heading--l: 6rem;
+  --heading--m: 4rem;
+  --heading--s: 3rem;
+  --heading--xs: 2rem;
+  --text--xl-bold: 1.75rem;
+  --text--l-bold: 1.5rem;
+  --text--s-semi-bold: 1.38rem;
+  --text--s-regular: 1.375rem;
+  --text--m-regular: 1.12rem;
+  --label--s-bold: 1.25rem;
+  --caption: 1rem;
+
+  /*spaces */
+  --space-none: 0rem;
+  --space-xxs: 0.5rem;
+  --space-xs: 1rem;
+  --space-sm: 1.5rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+  --space-xl: 4rem;
+  --space-xxl: 8rem;
+  --space-xxxs: 0.25rem;
+  --space-xxxl: 16rem;
+
+  /* colors */
+}
+
+
+/* common styles */
+.d-none {
+  display: none !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+.tab-pane:not(.tab-pane-show) {
+  display: none;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
+
+.m-auto {
+  margin: 0 auto;
+}
