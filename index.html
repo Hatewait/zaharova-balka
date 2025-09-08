@@ -43,11 +43,6 @@
         <a href="tel:+74951531498" class="text-md text-color-primary-inverse link-decor">+7(495) 153-14-98</a>
         <a href="mailto:info@t-d.ru" class="color-white link-md-medium">Перезвоните мне</a>
       </div>
-      <button class="btn-reset header__burger" data-menu-button="">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M18 16C18.5522 16.0001 19 16.4478 19 17C19 17.5523 18.5522 18 18 18H6C5.44773 18 5.00002 17.5523 5 17C5 16.4478 5.44772 16 6 16H18ZM18 11C18.5522 11.0001 19 11.4478 19 12C19 12.5523 18.5522 13 18 13H6C5.44773 13 5.00002 12.5523 5 12C5 11.4478 5.44772 11 6 11H18ZM18 6.00005C18.5522 6.00009 19 6.44779 19 7.00005C19 7.55228 18.5522 8 18 8.00005H6C5.44773 8.00005 5.00002 7.55231 5 7.00005C5 6.44776 5.44772 6.00005 6 6.00005H18Z" fill="white"/>
-        </svg>
-      </button>
 
       <!--<div class="side-menu" data-menu="">
         <div class="side-menu__top space-xl">
@@ -65,6 +60,11 @@
         </div>
       </div>-->
     </div>
+    <button class="btn-reset header__burger" data-menu-button="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M18 16C18.5522 16.0001 19 16.4478 19 17C19 17.5523 18.5522 18 18 18H6C5.44773 18 5.00002 17.5523 5 17C5 16.4478 5.44772 16 6 16H18ZM18 11C18.5522 11.0001 19 11.4478 19 12C19 12.5523 18.5522 13 18 13H6C5.44773 13 5.00002 12.5523 5 12C5 11.4478 5.44772 11 6 11H18ZM18 6.00005C18.5522 6.00009 19 6.44779 19 7.00005C19 7.55228 18.5522 8 18 8.00005H6C5.44773 8.00005 5.00002 7.55231 5 7.00005C5 6.44776 5.44772 6.00005 6 6.00005H18Z" fill="white"/>
+      </svg>
+    </button>
   </div>
   <div class="header__video-wrap">
     <video autoplay="" playsinline="" loop="" muted="" poster="assets/img/video-bg.jpg" class="header__video">
@@ -91,9 +91,11 @@
 <main>
   <section class="intro">
     <h2 class="visually-hidden">Клубный дом в живописном месте</h2>
-    <p class="text-center subtitle-xl">
-      Клубный дом в живописном месте, где <span class="subtitle-xl-accent color-accent">всё пространство и внимание</span> — только вашей компании. Здесь нет случайных соседей: только вы, ваши близкие и настоящая природа
-    </p>
+    <div class="container">
+      <p class="intro__text text-center subtitle-xl">
+        Клубный дом в живописном месте, где <span class="subtitle-xl-accent color-accent">всё пространство и внимание</span> — только вашей компании. Здесь нет случайных соседей: только вы, ваши близкие и настоящая природа
+      </p>
+    </div>
   </section>
   <section class="formats space-xxxl">
     <div class="container formats__wrap">
@@ -366,7 +368,7 @@
   </section>
   <section class="features space-xxxl">
     <div class="container">
-      <div class="features__flex">
+      <div class="features__wrap">
         <div class="features__content">
           <div class="features__content-top">
             <p class="heading-md space-md">Почему выбирают нас</p>
@@ -409,6 +411,12 @@
           </div>
         </div>
         <div class="features__pic">
+          <div class="features__banner">
+            <p class="features__banner-text">
+              <span class="heading-lg-accent color-white">>178</span>
+              <span class="color-white">довольных гостей</span>
+            </p>
+          </div>
           <img src="assets/img/features.png" alt="">
         </div>
       </div>
@@ -444,7 +452,63 @@
             Мы верим, что лучший способ рассказать о нас — это слова наших гостей. Здесь — их впечатления, эмоции и воспоминания о днях, проведённых в клубном доме «Байрам»
           </p>
         </div>
-        <button class="btn-reset button-filled color-white buttons-lg-medium">Оставить отзыв</button>
+        <div class="reviews__buttons">
+          <button class="btn-reset button-filled color-white buttons-lg-medium">Оставить отзыв</button>
+
+          <!-- Кнопки -->
+          <div class="reviews-slider__nav swiper-nav">
+            <button class="btn-reset swiper-nav__prev round-button" data-reviews-prev>
+              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="18" viewBox="0 0 11 18" fill="none">
+                <path d="M8.96021 0.292725C9.35075 -0.0974973 9.98384 -0.0976989 10.3743 0.292725C10.7645 0.683163 10.7644 1.3163 10.3743 1.70679L3.0813 8.99976L10.3743 16.2927C10.7645 16.6832 10.7644 17.3163 10.3743 17.7068C9.9838 18.0973 9.35074 18.0971 8.96021 17.7068L0.253174 8.99976L8.96021 0.292725Z" fill="white"/>
+              </svg>
+            </button>
+            <button class="btn-reset swiper-nav__next round-button" data-reviews-next>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M11.2935 7.29272C11.684 6.90248 12.3171 6.90229 12.7075 7.29272L21.4146 15.9998L12.7075 24.7068C12.317 25.0973 11.684 25.0972 11.2935 24.7068C10.9029 24.3163 10.9029 23.6832 11.2935 23.2927L18.5864 15.9998L11.2935 8.70679C10.9029 8.31626 10.9029 7.68325 11.2935 7.29272Z" fill="white"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Swiper -->
+      <div class="reviews-slider swiper" data-reviews-slider>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="reviews-slider__grid">
+              <div class="reviews-slider__grid-item">
+                1
+              </div>
+              <div class="reviews-slider__grid-item">
+                1
+              </div>
+              <div class="reviews-slider__grid-item">
+                1
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide">
+              <div class="reviews-slider__grid">
+                <div class="reviews-slider__grid-item">
+                  2
+
+                </div>
+                <div class="reviews-slider__grid-item">
+                  2
+
+                </div>
+                <div class="reviews-slider__grid-item">
+                  2
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
       </div>
 
     </div>
