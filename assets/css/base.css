@@ -23,12 +23,13 @@ body {
   flex-direction: column;
   min-height: 100vh;
   min-width: 320px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", var(--font-inter);, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: var(--text--s-regular);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", var(--font-main), "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: var(--text-lg-regular);
+  color: var(--text-main);
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
-  background-color: var(--bg-primary-white);
+  background-color: var(--bg-primary);
 }
 
 body.opened {
@@ -39,6 +40,7 @@ main {
   flex-grow: 1;
 }
 
+/*
 .fancybox__container {
   --fancybox-bg: rgb(255, 255, 255, 0.98);
 }
@@ -46,6 +48,7 @@ main {
 .fancybox__content>.f-button.is-close-btn {
   --f-button-color: var(--text-primary);
 }
+*/
 
 footer {
   flex-shrink: 0;
@@ -119,45 +122,96 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
-@font-face {
-  font-family: 'Inter';
-  src: url('../fonts/inter/Inter-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.btn-reset {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('../fonts/inter/Inter-Regular.woff') format('woff');
+  font-family: 'Onest';
+  src: url('../fonts/onest/Onest-Thin.woff2') format('woff2'), url('../fonts/onest/Onest-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Onest';
+  src: url('../fonts/onest/Onest-ExtraLight.woff2') format('woff2'), url('../fonts/onest/Onest-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Onest';
+  src: url('../fonts/onest/Onest-Light.woff2') format('woff2'), url('../fonts/onest/Onest-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Onest';
+  src: url('../fonts/onest/Onest-Regular.woff2') format('woff2'), url('../fonts/onest/Onest-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
-
 @font-face {
-  font-family: 'Inter';
-  src: url('../fonts/inter/Inter-SemiBold.woff2') format('woff2');
+  font-family: 'Onest';
+  src: url('../fonts/onest/Onest-Medium.woff2') format('woff2'), url('../fonts/onest/Onest-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Onest';
+  src: url('../fonts/onest/Onest-SemiBold.woff2') format('woff2'), url('../fonts/onest/Onest-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Inter';
-  src: url('../fonts/inter/Inter-SemiBold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'Soyuz Grotesk Bold';
-  src: url('../fonts/soyuzgrotesk/soyuzgrotesk-bold.woff') format('woff');
+  font-family: 'Onest';
+  src: url('../fonts/onest/Onest-Bold.woff2') format('woff2'), url('../fonts/onest/Onest-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
-
 @font-face {
-  font-family: 'Soyuz Grotesk Bold';
-  src: url('../fonts/soyuzgrotesk/soyuzgrotesk-bold.woff2') format('woff2');
-  font-weight: 700;
+  font-family: 'Onest';
+  src: url('../fonts/onest/Onest-ExtraBold.woff2') format('woff2'), url('../fonts/onest/Onest-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Onest';
+  src: url('../fonts/onest/Onest-Black.woff2') format('woff2'), url('../fonts/onest/Onest-Black.woff') format('woff');
+  font-weight: 900;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Cormorant';
+  src: url('../fonts/cormorant/Cormorant-Medium.woff2') format('woff2'), url('../fonts/cormorant/Cormorant-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cormorant';
+  src: url('../fonts/cormorant/Cormorant-MediumItalic.woff2') format('woff2'), url('../fonts/cormorant/Cormorant-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}

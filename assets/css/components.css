@@ -1,0 +1,99 @@
+.swiper-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xxs);
+  width: max-content;
+}
+
+
+.swiper-nav .swiper-button-disabled {
+  background: var(--buttons-disabled, rgba(54, 54, 54, 0.40));
+}
+
+.swiper-nav .swiper-button-disabled svg {
+  opacity: 0.6;
+}
+
+.round-button {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  background: var(--buttons-primary, #80011F);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+
+.button-filled {
+  display: flex;
+  min-height: 5rem;
+  padding: var(--space-md, 1.5rem) var(--space-xl, 3rem);
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xxs, 0.5rem);
+  width: max-content;
+  border-radius: var(--corner-radius-circle, 624999989248rem);
+  background: var(--buttons-primary, #80011F);
+}
+
+.button-texted {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xxs);
+  color: var(--buttons-secondary);
+}
+
+.button-bordered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xxs);
+  color: var(--buttons-secondary);
+  padding: var(--space-md, 1.5rem) var(--space-xl, 3rem);
+  width: max-content;
+  min-height: 4rem;
+  border-radius: var(--corner-radius-circle, 624999989248rem);
+  border: 2px solid var(--buttons-secondary, #363636);
+}
+
+.button-round {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  background: var(--bg-tertiary, #363636);
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-xxs);
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xxs);
+  padding: var(--space-xxs) var(--space-md);
+  width: max-content;
+  border-radius: var(--corner-radius-circle, 624999989248rem);
+  background: #EDEDED;
+}
+
+.price-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.section-top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
