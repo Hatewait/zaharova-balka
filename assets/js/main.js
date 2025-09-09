@@ -18,3 +18,25 @@ const accordionFaq = document.querySelector('#accordion-1');
 if (accordionFaq) {
   new ItcAccordion('#accordion-1');
 }
+
+/* menu */
+const menuButton = document.querySelector('[data-menu-button]');
+const menu = document.querySelector('[data-menu]');
+const buttonClose = document.querySelector('[data-menu-close]');
+const body = document.body;
+
+menuButton.addEventListener('click', () => {
+  menu.classList.add('opened');
+  body.classList.add('opened');
+})
+
+buttonClose.addEventListener('click', () => {
+  menu.classList.remove('opened');
+  body.classList.remove('opened');
+})
+
+
+
+Fancybox.bind('[data-fancybox]', {
+  Thumbs : false,
+});

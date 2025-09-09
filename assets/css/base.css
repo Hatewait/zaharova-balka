@@ -203,15 +203,32 @@ input[type="search"]::-webkit-search-results-decoration {
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Cormorant';
-  src: url('../fonts/cormorant/Cormorant-Medium.woff2') format('woff2'), url('../fonts/cormorant/Cormorant-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
+
+/*
 @font-face {
   font-family: 'Cormorant';
   src: url('../fonts/cormorant/Cormorant-MediumItalic.woff2') format('woff2'), url('../fonts/cormorant/Cormorant-MediumItalic.woff') format('woff');
   font-weight: 500;
   font-style: italic;
 }
+*/
+
+@font-face {
+  font-family: 'Cormorant';
+  src: url('../fonts/cormorant/CormorantInfant-Italic.woff2') format('woff2'), url('../fonts/cormorant/CormorantInfant-Italic.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+/*
+@font-face {
+  font-family: 'Cormorant';
+  src: url('../fonts/cormorant/CormorantInfant-Medium.woff2') format('woff2'), url('../fonts/cormorant/CormorantInfant-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+*/
+
+
+
