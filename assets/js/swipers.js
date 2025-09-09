@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     grabCursor: true,
     watchSlidesProgress: true,
     preloadImages: false,
+    watchOverflow: true,
     lazy: true,
     keyboard: {enabled: true},
     a11y: {

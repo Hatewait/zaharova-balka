@@ -82,6 +82,21 @@
   width: max-content;
   border-radius: var(--corner-radius-circle, 624999989248rem);
   background: #EDEDED;
+  height: max-content;
+}
+
+.tag_opacity {
+  background: var(--bg-primary-40, rgba(255, 255, 255, 0.60));
+}
+
+.play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: var(--buttons-primary, #80011F);
 }
 
 .price-wrap {
