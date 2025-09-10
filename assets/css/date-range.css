@@ -1,0 +1,146 @@
+/* Контейнер */
+.date-range {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Лейбл и инпут */
+.date-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+  width: max-content;
+}
+
+.date-field__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Иконка календаря как background-image (fill = currentColor) */
+.date-field__input {
+  --icon-color: var(--text-main);
+  appearance: none;
+  width: 15.5rem;
+  height: 3.38rem;
+  border-bottom: 1px solid var(--icons-secondary, #DCDCDC);
+  /*background: var(--field-bg) no-repeat 12px center / 17px 16px;*/
+  color: var(--text-main);
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+.date-field__input:hover {
+  /*border-color: var(--field-border-hover);*/
+}
+
+.date-field__input:focus {
+  outline: none;
+  /*border-color: var(--field-border-focus);*/
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--buttons-primary) 20%, transparent);
+}
+
+.date-field__input::placeholder {
+  color: #9E9E9E;
+}
+
+/* Disabled (инпут) */
+.date-field__input[disabled] {
+  color: var(--buttons-disabled);
+  border-color: #EAEAEA;
+  background-color: #F7F7F7;
+  cursor: not-allowed;
+  opacity: .9;
+}
+
+/* ---------- Стили flatpickr под макет ---------- */
+/* Общее окно */
+.flatpickr-calendar {
+  border: 1px solid #EFEFEF;
+  /*box-shadow: var(--shadow-pop);*/
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.flatpickr-months, .flatpickr-weekdays {
+  background: #fff;
+}
+
+.flatpickr-months .flatpickr-month {
+  height: 44px;
+}
+
+.flatpickr-current-month {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.flatpickr-weekdays .flatpickr-weekday {
+  font-size: 12px;
+  font-weight: 500;
+  color: #8C8C8C;
+}
+
+/* День по умолчанию (Default) */
+.flatpickr-day {
+  color: var(--text-main);
+  border-radius: 8px;
+  border: none;
+}
+
+/* Hover */
+.flatpickr-day:hover {
+  background: var(--buttons-primary-hover);
+  color: #fff;
+}
+
+/* Selected (start/end/inRange) */
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background: var(--buttons-primary);
+  color: #fff;
+}
+
+/* Диапазон между датами */
+.flatpickr-day.inRange {
+  background: color-mix(in srgb, var(--buttons-primary) 18%, white);
+  color: var(--text-main);
+  box-shadow: none;
+}
+
+/* Disabled (дни) */
+.flatpickr-day.disabled,
+.flatpickr-day.notAllowed,
+.flatpickr-day.flatpickr-disabled {
+  color: var(--buttons-disabled) !important;
+  background: transparent !important;
+  cursor: not-allowed;
+}
+
+/* Выходные */
+.flatpickr-day.is-weekend {
+  color: var(--text-accent);
+}
+
+.flatpickr-day.is-weekend:hover {
+  color: #fff; /* при hover — текст белый, фон как у hover */
+}
+
+/* Навигация */
+.flatpickr-prev-month, .flatpickr-next-month {
+  color: var(--text-main);
+}
+
+.flatpickr-prev-month:hover, .flatpickr-next-month:hover {
+  color: #fff;
+  background: var(--buttons-primary-hover);
+  border-radius: 8px;
+}
+
+/* Размещение календаря над инпутами (если нужно) */
+.flatpickr-calendar.arrowTop:before, .flatpickr-calendar.arrowTop:after {
+  display: none;
+}

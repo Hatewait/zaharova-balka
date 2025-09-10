@@ -14,9 +14,10 @@
   --subtitle-md: 2rem;
   --link-md-light: 1.25rem;
   --link-md-medium: 1.25rem;
-  --caption-md: ;
+  --caption-md: 1rem;
   --caption-sm: 1rem;
   --text-lg-regular: 1.375rem;
+  --text-lg-light: 1.25rem;
   --text-md-regular: 1.25rem;
   --text-sm-regular: 1.125rem;
   --buttons-lg-medium: 1.375rem;
@@ -407,6 +408,14 @@ a {
   line-height: 140%;
 }
 
+.text-lg-light {
+  font-family: var(--font-main), sans-serif;
+  font-size: var(--text-lg-light);
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+}
+
 .text-md-regular {
   font-family: var(--font-main), sans-serif;
   font-size: var(--text-md-regular);
@@ -426,6 +435,14 @@ a {
 .caption-sm {
   font-family: var(--font-main), sans-serif;
   font-size: var(--caption-sm);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.caption-md {
+  font-family: var(--font-main), sans-serif;
+  font-size: var(--caption-md);
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
