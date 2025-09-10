@@ -1,8 +1,7 @@
 /* Контейнер */
 .date-range {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  display: flex;
+  gap: var(--space-lg);
 }
 
 /* Лейбл и инпут */
@@ -14,9 +13,12 @@
 }
 
 .date-field__label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
+}
+
+.date-range__icon {
+  position: absolute;
+  display: none;
 }
 
 /* Иконка календаря как background-image (fill = currentColor) */
