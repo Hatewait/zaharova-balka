@@ -7,6 +7,7 @@
   const toEl   = document.getElementById('date-to');
   if (!fromEl || !toEl) return;
 
+  // плавающий лейбл
   const setFocus = (el, state) => {
     const field = el.closest('.date-field');
     if (field) field.classList.toggle('is-focused', !!state);
@@ -16,19 +17,35 @@
     if (field) field.classList.toggle('is-filled', !!el.value.trim());
   };
 
-  // RU локаль (если подключен ru.js)
+  // --- ограничения диапазона (статично) ---
+  const MIN_NIGHTS = 2;
+  const MAX_NIGHTS = 5;
+  const MS_DAY = 86400000;
+  const diffDaysUTC = (a, b) =>
+      Math.round(
+          (Date.UTC(b.getFullYear(), b.getMonth(), b.getDate()) -
+              Date.UTC(a.getFullYear(), a.getMonth(), a.getDate())) / MS_DAY
+      );
+  const addDays = (d, days) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + days);
+
+  // формат d.m.Y
+  const fmt = (d) => `${String(d.getDate()).padStart(2,'0')}.${String(d.getMonth()+1).padStart(2,'0')}.${d.getFullYear()}`;
+
+  // локаль
   const ru = window.flatpickr?.l10ns?.ru;
 
-  flatpickr(fromEl, {
-    // ВАЖНО: БЕЗ mode: 'range' — диапазон и два инпута ведёт плагин
+  const fp = flatpickr(fromEl, {
+    // ВАЖНО: режим диапазона включён
+    mode: 'range',
     dateFormat: 'd.m.Y',
+    rangeSeparator: ' — ',
     allowInput: false,
     clickOpens: true,
     disableMobile: true,
     locale: ru ?? undefined,
     minDate: 'today',
 
-    // Шапка и стрелки
+    // шапка
     monthSelectorType: 'static',
     prevArrow:
         '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">' +
@@ -40,17 +57,17 @@
         '</svg>',
     showMonths: 1,
 
-    // Подключаем плагин диапазона и указываем второй инпут
+    // второй инпут ведёт плагин
     plugins: [ new window.rangePlugin({ input: '#date-to' }) ],
 
-    // Подсветка выходных
+    // выходные
     onDayCreate: (_sel, _str, _inst, dayElem) => {
       const d = dayElem.dateObj; if (!d) return;
       const wd = d.getDay();
       if (wd === 0 || wd === 6) dayElem.classList.add('is-weekend');
     },
 
-    // Только визуальные состояния для плавающего лейбла
+    // показываем плейсхолдеры/лейблы
     onOpen: () => {
       const target = (document.activeElement === toEl) ? toEl : fromEl;
       setFocus(target, true);
@@ -59,17 +76,53 @@
       setFocus(fromEl, false);
       setFocus(toEl, false);
     },
-    onChange: () => {
+
+    // 1) Жёстко соблюдаем 2–5 ночей,
+    // 2) всегда пишем в инпуты "только заезд" и "только выезд"
+    onChange: function(selectedDates) {
+      if (selectedDates.length === 2) {
+        let [start, end] = selectedDates;
+        // flatpickr гарантирует порядок, но на всякий проверим
+        if (end < start) [start, end] = [end, start];
+
+        let nights = diffDaysUTC(start, end);
+
+        if (nights < MIN_NIGHTS) {
+          end = addDays(start, MIN_NIGHTS);
+          this.setDate([start, end], true);
+        } else if (nights > MAX_NIGHTS) {
+          end = addDays(start, MAX_NIGHTS);
+          this.setDate([start, end], true);
+        }
+      }
+
+      // нормализация значений инпутов
+      const [s, e] = this.selectedDates;
+      fromEl.value = s ? fmt(s) : '';
+      toEl.value   = e ? fmt(e) : '';
       setFilled(fromEl);
       setFilled(toEl);
     },
-    onReady: () => {
+
+    // на готовности привести инпуты к норме (чтобы в первом не было "склейки")
+    onValueUpdate: function() {
+      const [s, e] = this.selectedDates;
+      fromEl.value = s ? fmt(s) : '';
+      toEl.value   = e ? fmt(e) : '';
+      setFilled(fromEl);
+      setFilled(toEl);
+    },
+
+    onReady: function () {
+      const [s, e] = this.selectedDates;
+      fromEl.value = s ? fmt(s) : '';
+      toEl.value   = e ? fmt(e) : '';
       setFilled(fromEl);
       setFilled(toEl);
     }
   });
 
-  // Плавающий лейбл и запрет ручного ввода
+  // плавающий лейбл и запрет ручного ввода
   fromEl.addEventListener('focus', () => setFocus(fromEl, true));
   fromEl.addEventListener('blur',  () => setFocus(fromEl, false));
   toEl.addEventListener('focus',   () => setFocus(toEl, true));

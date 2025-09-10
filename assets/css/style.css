@@ -562,10 +562,19 @@ a {
   height: 4rem;
 }
 
+.header__wrapper_inner {
+  border-radius: 0 0 var(--corner-radius-md, 1.5rem) var(--corner-radius-md, 1.5rem);
+  background: var(--buttons-secondary, #363636);
+}
+
 .header__wrapper.fixed {
   border-radius: 0 0 0 var(--corner-radius-md, 1rem);
   background: var(--bg-acient-20, rgba(0, 0, 0, 0.20));
   backdrop-filter: blur(5px);
+}
+
+.header__wrapper_inner.fixed {
+  background: var(--buttons-secondary, #363636);
 }
 
 .header__container {

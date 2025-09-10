@@ -1,7 +1,13 @@
 /* Контейнер */
+.data-range-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
 .date-range {
   display: flex;
   gap: var(--space-lg);
+  width: 100%;
 }
 
 /* Плавающий лейбл */
@@ -9,6 +15,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   gap: var(--space-xxs);
   width: max-content;
   /* чтобы псевдофокус по tab не ломал верстку */
@@ -16,7 +23,7 @@
 }
 
 /* Иконка */
-.date-range__icon {
+.date-field__icon {
   position: absolute;
   right: 0;
   top: 1rem;
@@ -30,8 +37,8 @@
 .date-field__input {
   --icon-color: var(--text-main);
   appearance: none;
-  width: 15.5rem;
-  height: 3.38rem;
+  width: 100%;
+  height: 2.6rem;
   padding-right: 28px; /* место под иконку */
   border-bottom: 1px solid var(--icons-secondary, #DCDCDC);
   color: var(--text-main);
@@ -251,3 +258,6 @@
 .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)), .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)), .flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {
   box-shadow: none;
 }
+
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay { cursor: pointer; }
