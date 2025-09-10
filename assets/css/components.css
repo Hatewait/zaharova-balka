@@ -36,13 +36,21 @@
   width: max-content;
   border-radius: var(--corner-radius-circle, 624999989248rem);
   background: var(--buttons-primary, #80011F);
+  transition: background-color 0.3s ease-in;
 }
+
+.button-filled.disabled {
+  background: var(--buttons-disabled, rgba(54, 54, 54, 0.40));
+  color: var(--text-disabled, rgba(255, 255, 255, 0.60));
+}
+
 
 .button-texted {
   display: flex;
   align-items: center;
   gap: var(--space-xxs);
   color: var(--buttons-secondary);
+  transition: var(--transition);
 }
 
 .button-bordered {
@@ -55,6 +63,7 @@
   width: max-content;
   border-radius: var(--corner-radius-circle, 624999989248rem);
   border: 2px solid var(--buttons-secondary, #363636);
+  transition: var(--transition);
 }
 
 .button-round {
@@ -65,6 +74,7 @@
   width: 4rem;
   height: 4rem;
   background: var(--bg-tertiary, #363636);
+  transition: background-color 0.3s ease-in;;
 }
 
 .tags {
@@ -127,5 +137,42 @@
   .button-round {
     width: 3rem;
     height: 3rem;
+  }
+}
+
+@media (hover: hover), (-ms-high-contrast: none) {
+  .button-filled:hover {
+    background: var(--buttons-primary-hover, #80011F);
+  }
+
+  .button-filled:active {
+    background: var(--buttons-primary-pressed, #80011F);
+  }
+
+  .header__burger:hover {
+    background: var(--buttons-primary-hover, #80011F);
+  }
+
+  .button-bordered:hover {
+    color: var(--buttons-secondary-hover, #193E2C);
+    border-color: var(--buttons-secondary-hover, #193E2C);
+    background: transparent;
+  }
+
+  .button-bordered:active {
+    color: var(--buttons-secondary-pressed, #193E2C);
+    border-color: var(--buttons-secondary-pressed, #193E2C);
+  }
+
+  .round-button:not(.swiper-button-disabled):hover {
+    background: var(--buttons-primary-hover, #80011F);
+  }
+
+  .button-texted:hover {
+    color: var(--buttons-secondary-hover, #193E2C);
+  }
+
+  .button-texted:active {
+    color: var(--buttons-secondary-pressed, #193E2C);
   }
 }

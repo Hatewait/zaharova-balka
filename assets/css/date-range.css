@@ -92,7 +92,7 @@
   color: var(--text-main);
 }
 
-/* ---------- Стили flatpickr под макет (оставила твои, без изменений визуалки) ---------- */
+
 .flatpickr-calendar {
   border: 1px solid #EFEFEF;
   border-radius: 12px;
