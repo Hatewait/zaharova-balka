@@ -21,29 +21,24 @@
 }
 .dropdown .options {
   width: 100%;
-  border-radius: 9px;
-  padding: 8px;
   cursor: pointer;
-  background: white;
-  border: none;
   outline: none;
-  box-shadow: 0 10px 25px rgba(124, 130, 141, 0.2);
-  font-size: 20px;
   overflow: hidden;
   position: absolute;
-  top: 80px;
+  top: 40px;
   transition: all 0.7s ease;
   opacity: 0;
   transform: translateY(-50px);
   visibility: hidden;
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(4.5px);
-  -webkit-backdrop-filter: blur(4.5px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0 0 var(--corner-radius-xs, 0.75rem) var(--corner-radius-xs, 0.75rem);
+  background: var(--bg-primary, #FFF);
+
+  /* desktop/shadow/dropdown */
+  box-shadow: 0 12px 30px 0 rgba(20, 42, 72, 0.07);
 }
 .dropdown .options .option {
-  padding: 16px;
-  border-radius: 9px;
+  height: 3rem;
+  padding: var(--space-xs, 0.75rem) var(--space-sm, 1rem);
   transition: all 0.2s ease;
   color: #292d34;
 }
@@ -51,9 +46,7 @@
   margin-bottom: 8px;
 }
 .dropdown .options .option:hover {
-  color: white;
-  background: #5bc5fa;
-  box-shadow: 0 10px 25px rgba(42, 179, 248, 0.4);
+  background: var(--bg-neutral, rgba(220, 220, 220, 0.20));
 }
 .dropdown.opened .options {
   opacity: 1;
@@ -69,7 +62,7 @@
 }
 
 /* Состояние: лейбл «припаркован» наверху (фокус или заполнено) */
-.dropdown.opened .date-field__label {
+.dropdown.opened .date-field__label, .dropdown.is-filled .date-field__label {
   top: -.5rem;
   font-size: 12px;
   color: var(--text-main);
