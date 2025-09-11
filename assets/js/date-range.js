@@ -7,15 +7,6 @@
   const toEl   = document.getElementById('date-to');
   if (!fromEl || !toEl) return;
 
-  // плавающий лейбл
-  const setFocus = (el, state) => {
-    const field = el.closest('.date-field');
-    if (field) field.classList.toggle('is-focused', !!state);
-  };
-  const setFilled = (el) => {
-    const field = el.closest('.date-field');
-    if (field) field.classList.toggle('is-filled', !!el.value.trim());
-  };
 
   // --- ограничения диапазона (статично) ---
   const MIN_NIGHTS = 2;
