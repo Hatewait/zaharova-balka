@@ -624,6 +624,16 @@ a {
   z-index: -1;
 }
 
+.header__bg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
 .header__info {
   max-width: 42.3rem;
   margin: 0 auto;
@@ -1458,4 +1468,39 @@ a {
     align-items: flex-start;
     gap: var(--space-md);
   }
+}
+
+
+/* product-page */
+.mosaic{
+  width:100%;
+  /* для Masonry важна позиционируемость потомков */
+}
+.mosaic__gutter{ width:12px; }     /* расстояние между колонками/рядками */
+.mosaic__sizer{  width:25%; }      /* базовая колонка = 25% (4 колонки) */
+
+.mosaic__item{ width:25%; }        /* по умолчанию 1 колонка */
+.mosaic__item--w2{ width:50%; }    /* элемент на 2 колонки */
+
+.mosaic__img{
+  display:block;
+  width:100%;
+  height:auto;                     /* сохраняем пропорции без кропа */
+  border-radius:8px;
+}
+
+/* адаптив: меньше колонок — другой sizer */
+@media (max-width: 1024px){
+  .mosaic__sizer{ width:33.3333%; }
+  .mosaic__item{  width:33.3333%; }
+  .mosaic__item--w2{ width:66.6667%; }
+}
+@media (max-width: 720px){
+  .mosaic__sizer{ width:50%; }
+  .mosaic__item{  width:50%; }
+  .mosaic__item--w2{ width:100%; }
+}
+@media (max-width: 480px){
+  .mosaic__sizer{ width:100%; }
+  .mosaic__item{  width:100%; }
 }
