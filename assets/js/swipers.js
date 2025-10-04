@@ -24,27 +24,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const sliderReviews = new Swiper('[data-reviews-slider]', {
-    speed: 600,
-    grabCursor: true,
+  // Инициализируем превью
+  const thumbs = new Swiper('[data-thumbs-slider]', {
+    spaceBetween: 12,
+    slidesPerView: 3,
     watchSlidesProgress: true,
-    preloadImages: false,
-    watchOverflow: true,
-    lazy: true,
-    keyboard: {enabled: true},
-    a11y: {
-      enabled: true,
-    },
-    navigation: {
-      nextEl: '[data-reviews-next]',
-      prevEl: '[data-reviews-prev]',
-      lockClass: 'swiper-nav__lock'
-    },
+    watchSlidesVisibility: true,
 
-    spaceBetween: 0,
+    a11y: { enabled: true },
     breakpoints: {
-     /* 480: {spaceBetween: 8},
-      768: {spaceBetween: 12}*/
+      480:  { slidesPerView: 4 },
+      768:  { slidesPerView: 5 },
+      1200: { slidesPerView: 3 }
     }
   });
+
+// Инициализируем основной
+  const main = new Swiper('[data-double-slider]', {
+    effect: 'fade',
+    fadeEffect: { crossFade: true }, // плавная перекладка прозрачности
+    speed: 600,
+    spaceBetween: 24,
+    loop: true,
+    navigation: {
+      nextEl: '[data-double-next]',
+      prevEl: '[data-double-prev]',
+      lockClass: 'swiper-nav__lock'
+    },
+    thumbs: { swiper: thumbs },
+    preloadImages: false,
+    lazy: { loadOnTransitionStart: true },
+    a11y: { enabled: true }
+  });
+
+// Скрыть стрелки, если слайд один
+  const navNext = document.querySelector('.swiper-button-next');
+  const navPrev = document.querySelector('.swiper-button-prev');
+  const toggleNav = () => {
+    const isSingle = main.slides.length <= 1;
+    [navNext, navPrev].forEach(btn => btn && (btn.style.display = isSingle ? 'none' : ''));
+  };
+  toggleNav();
+
 })
+
+

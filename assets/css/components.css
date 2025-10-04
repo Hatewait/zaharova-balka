@@ -66,6 +66,11 @@
   transition: var(--transition);
 }
 
+.button-bordered_xs {
+  height: 2.875rem;
+  padding: var(--space-xs, 0.75rem) var(--space-md, 1.5rem);
+}
+
 .button-round {
   display: flex;
   align-items: center;
@@ -91,7 +96,7 @@
   padding: var(--space-xxs) var(--space-md);
   width: max-content;
   border-radius: var(--corner-radius-circle, 624999989248rem);
-  background: #EDEDED;
+  background: var(--bg-neutral, rgba(220, 220, 220, 0.20));
   height: max-content;
 }
 
