@@ -963,7 +963,6 @@ a {
 
 /* end formats */
 
-
 .tours__wrap {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1086,7 +1085,6 @@ a {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-
 
 /* end tour */
 
@@ -1764,7 +1762,6 @@ a {
   }
 }
 
-
 /*  program */
 .program__flex {
   display: flex;
@@ -1800,6 +1797,7 @@ a {
   .program__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .program__grid-item_col-3, .program__grid-item_col-6 {
     grid-column: inherit;
   }
@@ -1810,6 +1808,7 @@ a {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
 /* tabs */
 
 .tabs__buttons {
@@ -1846,9 +1845,11 @@ a {
     scrollbar-width: none;
   }
 
-  .tabs__buttons::-webkit-scrollbar{ display: none; }
+  .tabs__buttons::-webkit-scrollbar {
+    display: none;
+  }
 
-  .tabs__button{
+  .tabs__button {
     flex: 0 0 auto;
     white-space: nowrap;
   }
@@ -2229,7 +2230,6 @@ a {
   white-space: nowrap;
 }
 
-
 @media (max-width: 768px) {
   .promo-table__head {
     display: none;
@@ -2249,7 +2249,7 @@ a {
   }
 
   .promo-table__row {
-    padding: 0 var(--space-lg)  var(--space-lg)  var(--space-lg);
+    padding: 0 var(--space-lg) var(--space-lg) var(--space-lg);
   }
 
   .promo-table__row {
@@ -2357,8 +2357,8 @@ a {
 }
 
 .services-thumbs-slider .swiper-slide {
- /* width: 16.25rem;
-  height: 16.25rem;*/
+  /* width: 16.25rem;
+   height: 16.25rem;*/
   aspect-ratio: 1/1;
   border-radius: 22px;
   overflow: hidden;
@@ -2402,23 +2402,40 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .slide-right {
-    padding-top: 20rem;
+  .services-slider {
+    --thumbs-h: 0px;
   }
 
-  .services-thumbs-slider  {
+
+  .slide-right {
+    --thumbs-gap: 24px;
+    margin-top: calc(var(--thumbs-h, 0px) + var(--thumbs-gap));
+  }
+
+  .services-thumbs-slider {
     top: auto;
-    bottom: 100px;
+    bottom: 202px;
     width: 100%;
     margin-bottom: 8px;
   }
 
- /* .thumbs-slider .swiper-slide {
-    width: 126px;
-    height: 126px;
-  }*/
+  .services-slider__nav {
+    position: static;
+    margin: var(--space-xxl) auto 0 auto;
+  }
 }
 
+@media (max-width: 572px) {
+  .services-thumbs-slider {
+    bottom: 230px;
+  }
+}
+
+@media (max-width: 407px) {
+  .services-thumbs-slider {
+    bottom: 250px;
+  }
+}
 /* details */
 .details__top {
   display: flex;
