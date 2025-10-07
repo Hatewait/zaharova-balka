@@ -33,9 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     a11y: { enabled: true },
     breakpoints: {
-      480:  { slidesPerView: 4 },
-      768:  { slidesPerView: 5 },
-      1200: { slidesPerView: 3 }
+
     }
   });
 
